@@ -24,3 +24,5 @@ module GovballPlaylister
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
+
+RSpotify::authenticate(ENV['CLIENT_ID'], ENV['CLIENT_SECRET'])
