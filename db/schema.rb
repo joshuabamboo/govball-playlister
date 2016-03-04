@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160304192012) do
+ActiveRecord::Schema.define(version: 20160304194202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,13 +52,13 @@ ActiveRecord::Schema.define(version: 20160304192012) do
 
   create_table "performances", force: :cascade do |t|
     t.integer  "artist_id"
-    t.integer  "festival_day"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "festival_day_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_index "performances", ["artist_id"], name: "index_performances_on_artist_id", using: :btree
-  add_index "performances", ["festival_day"], name: "index_performances_on_festival_day", using: :btree
+  add_index "performances", ["festival_day_id"], name: "index_performances_on_festival_day_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
