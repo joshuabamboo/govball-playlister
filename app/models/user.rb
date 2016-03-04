@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
     self.create(
       provider: auth_hash[:provider],
       uid: auth_hash[:uid],
-      name: auth_hash[:name]
+      name: auth_hash[:info][:display_name],
+      image_url: auth_hash[:info][:images][0][:url]
     )
   end
 
