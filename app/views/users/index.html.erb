@@ -1,4 +1,5 @@
 <% if logged_in? %>
+  <%= image_tag @user.image_url %>
   <%= link_to 'Logout', logout_path %>
 <% else %>
   <%= link_to 'Sign in with Spotify', '/auth/spotify' %>
