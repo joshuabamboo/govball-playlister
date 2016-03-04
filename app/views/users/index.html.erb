@@ -1,1 +1,5 @@
-<%= link_to 'Sign in with Spotify', '/auth/spotify' %>
+<% if logged_in? %>
+  <%= link_to 'Logout', logout_path %>
+<% else %>
+  <%= link_to 'Sign in with Spotify', '/auth/spotify' %>
+<% end %>

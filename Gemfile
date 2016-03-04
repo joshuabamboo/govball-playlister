@@ -39,6 +39,8 @@ group :development, :test do
   gem 'byebug'
   # Secure all the keeeeys
   gem 'dotenv-rails'
+  # My scalpel
+  gem 'pry'
 end
 
 group :development do
