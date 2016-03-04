@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_date: 2016-03-04 14:18:19
+  finish_date: 2016-03-04 14:18:19
+  festival_id: 1
+
+two:
+  start_date: 2016-03-04 14:18:19
+  finish_date: 2016-03-04 14:18:19
+  festival_id: 1

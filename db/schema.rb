@@ -11,10 +11,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160304171454) do
+ActiveRecord::Schema.define(version: 20160304192012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artists", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "festival_days", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "finish_date"
+    t.integer  "festival_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "festival_days", ["festival_id"], name: "index_festival_days_on_festival_id", using: :btree
+
+  create_table "festivals", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "year"
+    t.integer  "organizer_id"
+    t.datetime "start_date"
+    t.datetime "finish_date"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "festivals", ["organizer_id"], name: "index_festivals_on_organizer_id", using: :btree
+
+  create_table "organizers", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "performances", force: :cascade do |t|
+    t.integer  "artist_id"
+    t.integer  "festival_day"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "performances", ["artist_id"], name: "index_performances_on_artist_id", using: :btree
+  add_index "performances", ["festival_day"], name: "index_performances_on_festival_day", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
