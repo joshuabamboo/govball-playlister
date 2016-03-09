@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :playlists
+
   def self.create_from_oauth(auth_hash)
     self.create(
       provider: auth_hash[:provider],

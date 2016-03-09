@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :playlists
   root 'users#index'
   resources :users
+  get 'ajazz', to: 'users#ajazz'
   get 'auth/spotify/callback', to: 'sessions#create'
   get 'logout', to: 'sessions#delete'
   # The priority is based upon order of creation: first created -> highest priority.

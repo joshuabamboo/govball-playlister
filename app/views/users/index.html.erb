@@ -1,6 +1,17 @@
 <% if logged_in? %>
   <%= image_tag @user.image_url %>
   <%= link_to 'Logout', logout_path %>
+
+  <div class="festival-box">
+    <!-- Ajaxify this -->
+    <%#= form_tag(ajazz_path, method: :get, remote: true) do %>
+    <%#= select_tag("festivals", options_from_collection_for_select(Festival.all, :id, :name)) %>
+    <%#= submit_tag "Select This Festival" %>
+    <%# end %>
+    <%= Festival.first.name %>
+    <%#= link_to "Generate Top Tracks Playlist", playlist_path %>
+  </div>
+
 <% else %>
   <%= link_to 'Sign in with Spotify', '/auth/spotify' %>
 <% end %>
