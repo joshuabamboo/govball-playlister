@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
       provider: auth_hash[:provider],
       uid: auth_hash[:uid],
       name: auth_hash[:info][:display_name],
-      image_url: auth_hash[:info][:images][0][:url]
+      image_url: auth_hash[:info][:images][0][:url],
+      rspotify_hash: auth_hash.to_hash
     )
   end
 
