@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
     auth = request.env['omniauth.auth']
     user = User.from_oauth(auth)
     session[:user_id] = user.id
-    binding.pry
 
     spotify_user = RSpotify::User.new(auth)
 
