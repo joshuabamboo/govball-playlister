@@ -14,30 +14,3 @@ class SessionsController < ApplicationController
     redirect_to root_url, notice: "Logged out"
   end
 end
-
-
-# # Plan A
-# client = SpotifyClient.for(user)
-#
-# class SpotifyClient
-#   def self.for(user)
-#     RShittyGem.new(user.rspotify_hash)
-#   end
-#
-# end
-# client.tracks
-#
-# user.tracks
-# user.playlists
-#
-# # Plan B
-# class Account
-#   def tracks
-#     client.tracks
-#   end
-#
-#   private
-#   def client
-#     RShittyGem.new(self.rspotify_hash)
-#   end
-# end
