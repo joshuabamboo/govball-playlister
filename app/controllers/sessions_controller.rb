@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     user = User.from_oauth(auth)
     session[:user_id] = user.id
 
-    spotify_user = RSpotify::User.new(auth)
+    client = SpotifyClient.for(user)
 
     redirect_to root_url, notice: "Signed in"
   end
