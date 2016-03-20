@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
     client = SpotifyClient.for(user)
 
-    redirect_to root_url, notice: "Signed in"
+    redirect_to new_playlist_path, notice: "Signed in"
   end
 
   def delete

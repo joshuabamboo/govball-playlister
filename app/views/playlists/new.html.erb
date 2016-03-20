@@ -1,6 +1,14 @@
 <% if logged_in? %>
   <%= image_tag @user.image_url %>
   <%= link_to 'Logout', logout_path %>
+
+  <div class="festival-box">
+    <%= form_for(@playlist) do |f| %>
+    <%= f.submit "Generate Playlist" %>
+    <% end %>
+    <%= Festival.first.name %>
+  </div>
+
 <% else %>
   <%= link_to 'Sign in with Spotify', '/auth/spotify' %>
 <% end %>

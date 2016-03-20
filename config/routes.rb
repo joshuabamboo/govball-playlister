@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'playlists/new'
+
+  get 'playlists/create'
+
   resources :playlists
   root 'users#index'
   resources :users
