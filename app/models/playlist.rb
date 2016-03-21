@@ -2,18 +2,21 @@ class Playlist < ActiveRecord::Base
   belongs_to :user
   attr_accessor :user
 
-  def generate_playlist(user)
+  def generate_playlist(tracks)
     @user = user
     # get the tracks
     # create spotify playlist
-    pl = client.create_playlist!(tracks)
+    pl = client.create_playlist!("Top GovBall Tracks")
+    pl.add_tracks!(tracks)
     # save playlist to db
-    create_from_spotify(pl)
+    self.class.create_from_spotify(pl, user)
   end
 
-  def create_from_spotify(spotify_playlist)
+  def self.create_from_spotify(spotify_playlist, user)
     self.create(
-      binding.pry
+      type: "",
+      link: spotify_playlist.external_urls['spotify'],
+      user: user.id
     )
   end
 
@@ -38,7 +41,6 @@ class Playlist < ActiveRecord::Base
 
     tracks = []
     spotify_artists.collect do |artist|
-      binding.pry
       tracks << artist.top_tracks(:US).first
     end
     tracks
