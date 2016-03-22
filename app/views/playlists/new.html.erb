@@ -1,5 +1,5 @@
 <% if logged_in? %>
-  <div class="festival-box">
+  <div class="festival-form col-xs-2 col-xs-offset-5">
     <%= form_for(@playlist) do |f| %>
     <%= f.submit "Generate Playlist" %>
     <% end %>
