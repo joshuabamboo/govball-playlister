@@ -13,6 +13,7 @@ class Playlist < ActiveRecord::Base
   end
 
   def self.create_from_spotify(spotify_playlist, user)
+    binding.pry
     self.create(
       type: "",
       link: spotify_playlist.external_urls['spotify'],
@@ -33,9 +34,9 @@ class Playlist < ActiveRecord::Base
       artist_object.festival_days.first.festival.name == festival_name
     end
 
+    client
     spotify_artists = []
     artists.select do |artist|
-      client
       spotify_artists << RSpotify::Artist.search(artist.name).first
     end
 
