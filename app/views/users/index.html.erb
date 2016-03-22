@@ -1,6 +1,13 @@
-<% if logged_in? %>
-  <%= image_tag @user.image_url %>
-  <%= link_to 'Logout', logout_path %>
-<% else %>
-  <%= link_to 'Sign in with Spotify', '/auth/spotify' %>
-<% end %>
+  <% if logged_in? %>
+    <%= image_tag @user.image_url %>
+    <%= link_to 'Logout', logout_path %>
+  <% else %>
+    <div class="col-xs-offset-3 col-xs-5">
+      <div id="welcome-text">
+        <h1>Some Awesome Marketing Speak</h1>
+      </div>
+      <div class="col-xs-offset-4 welcome-btn">
+        <%= link_to 'Sign in with Spotify', '/auth/spotify', class: "btn btn-success btn-lg" %>
+      </div>
+    </div>
+  <% end %>
