@@ -8,7 +8,11 @@ class PlaylistsController < ApplicationController
   def create
     playlist = Playlist.new
     tracks = playlist.get_top_tracks_for("Governors Ball", current_user)
-    playlist.generate_playlist(tracks)
+    pl = playlist.generate_playlist(tracks)
+    playlist.create_from_spotify(pl, current_user)
+    if playlist.save
+      redirect_to playlist
+    end
   end
 
   def show
