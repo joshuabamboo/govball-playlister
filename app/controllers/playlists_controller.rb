@@ -11,7 +11,8 @@ class PlaylistsController < ApplicationController
     playlist.generate_playlist(tracks)
   end
 
-  def method_name
-
+  def show
+    @playlist = Playlist.find(params[:id])
+    @embed_data = @playlist.link.match(/spotify.com\/(.*)/)[1].gsub('/', '%3A')
   end
 end
