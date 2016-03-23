@@ -2,9 +2,9 @@ class Playlist < ActiveRecord::Base
   belongs_to :user
   attr_accessor :user
 
-  def generate_playlist(tracks)
+  def generate_playlist(title, tracks)
     @user = user
-    pl = client.create_playlist!("Top GovBall Tracks")
+    pl = client.create_playlist!(title)
     pl.add_tracks!(tracks)
     pl
   end
@@ -16,10 +16,14 @@ class Playlist < ActiveRecord::Base
     )
   end
 
-  def get_top_tracks_for(festival_name, current_user)
+  def get_top_tracks_for(festival_name, day, current_user)
     @user = current_user
     artists = Artist.all.select do |artist_object|
       artist_object.festival_days.first.festival.name == festival_name
+    end
+
+    unless day == "all"
+      artists = filter_artists_by_day(artists, day)
     end
 
     client
@@ -33,6 +37,10 @@ class Playlist < ActiveRecord::Base
       tracks << artist.top_tracks(:US).first
     end
     tracks
+  end
+
+  def filter_artists_by_day(artists, day)
+      artists.select {|a| a if a.festival_days.find_by(start_date: day)}
   end
 
   private

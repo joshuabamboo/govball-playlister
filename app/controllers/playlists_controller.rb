@@ -7,8 +7,12 @@ class PlaylistsController < ApplicationController
 
   def create
     playlist = Playlist.new
-    tracks = playlist.get_top_tracks_for("Governors Ball", current_user)
-    pl = playlist.generate_playlist(tracks)
+    tracks = playlist.get_top_tracks_for("Governors Ball", params[:playlist_day], current_user)
+    if params[:playlist_day] == "all"
+      pl = playlist.generate_playlist("GovBall 2016 Top Tracks", tracks)
+    else
+      pl = playlist.generate_playlist("GovBall Top Tracks: #{params[:playlist_day]}", tracks)
+    end
     playlist.create_from_spotify(pl, current_user)
     if playlist.save
       redirect_to playlist

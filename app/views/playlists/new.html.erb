@@ -1,9 +1,38 @@
 <% if logged_in? %>
-  <div class="festival-form col-xs-2 col-xs-offset-5">
-    <%= form_for(@playlist) do |f| %>
-    <%= f.submit "Generate Playlist" %>
+<div class="top-tracks-header">
+  <h1>Top Tracks</h1>
+</div>
+<div class="col-md-offset-1 col-xs-offset-3">
+
+  <div class="festival-form col-md-3 col-xs-10">
+    <%= form_tag(playlists_path, method: :post) do %>
+      <%= hidden_field_tag "playlist_day", "all" %>
+      <%= submit_tag "GovBall 2016 Top Tracks", class: "btn btn-success" %>
     <% end %>
   </div>
+
+  <div class="festival-form col-md-3 col-xs-10">
+    <%= form_tag(playlists_path, method: :post) do %>
+      <%= hidden_field_tag "playlist_day", "Fri, 03 Jun 2016" %>
+      <%= submit_tag "Friday GovBall Playlist", class: "btn btn-success" %>
+    <% end %>
+  </div>
+
+  <div class="festival-form col-md-3 col-xs-10">
+    <%= form_tag(playlists_path, method: :post) do %>
+      <%= hidden_field_tag "playlist_day", "Sat, 04 Jun 2016" %>
+      <%= submit_tag "Saturday GovBall Playlist", class: "btn btn-success" %>
+    <% end %>
+  </div>
+
+  <div class="festival-form col-md-3 col-xs-10">
+    <%= form_tag(playlists_path, method: :post) do %>
+      <%= hidden_field_tag "playlist_day", "Sun, 05 Jun 2016" %>
+      <%= submit_tag "Sunday GovBall Playlist", class: "btn btn-success" %>
+    <% end %>
+  </div>
+</div>
+
 
 <% else %>
   <%= link_to 'Sign in with Spotify', '/auth/spotify' %>
