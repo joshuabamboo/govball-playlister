@@ -11,7 +11,6 @@ class Playlist < ActiveRecord::Base
 
   def create_from_spotify(spotify_playlist, user)
     self.update(
-      type: "",
       link: spotify_playlist.external_urls['spotify'],
       user_id: user.id
     )
