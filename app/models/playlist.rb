@@ -18,25 +18,48 @@ class Playlist < ActiveRecord::Base
 
   def get_top_tracks_for(festival_name, day, current_user)
     @user = current_user
-    artists = Artist.all.select do |artist_object|
-      artist_object.festival_days.first.festival.name == festival_name
-    end
 
+    # create an array of artists for a given festival
+    # artists = Artist.all.select do |artist_object|
+    #   artist_object.festival_days.first.festival.name == festival_name
+    # end
+    artists = get_lineup(festival_name)
+
+    # filter_artists_by_day
     unless day == "all"
       artists = filter_artists_by_day(artists, day)
     end
 
+    # establish connection to client
     client
-    spotify_artists = []
-    artists.select do |artist|
-      spotify_artists << RSpotify::Artist.search(artist.name).first
-    end
 
+    # create an array of rspotify artist objects
+    # spotify_artists = []
+    # artists.select do |artist|
+    #   spotify_artists << RSpotify::Artist.search(artist.name).first
+    # end
+    convert_artists_to_rspotify_objects(artists)
+
+    # create an array of the top track for a given artist
     tracks = []
     spotify_artists.collect do |artist|
       tracks << artist.top_tracks(:US).first
     end
     tracks
+  end
+
+  def get_lineup(festival_name)
+    Artist.all.select do |artist_object|
+      artist_object.festival_days.first.festival.name == festival_name
+    end
+  end
+
+  def convert_artists_to_rspotify_objects(artists)
+    spotify_artists = []
+    artists.select do |artist|
+      spotify_artists << RSpotify::Artist.search(artist.name).first
+    end
+    spotify_artists
   end
 
   def filter_artists_by_day(artists, day)
