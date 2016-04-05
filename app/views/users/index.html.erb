@@ -1,6 +1,5 @@
   <% if logged_in? %>
-    <%= image_tag @user.image_url %>
-    <%= link_to 'Logout', logout_path %>
+    
   <% else %>
     <div class="col-xs-offset-3 col-xs-5">
       <div id="welcome-text">
