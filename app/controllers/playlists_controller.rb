@@ -24,3 +24,15 @@ class PlaylistsController < ApplicationController
     @embed_data = @playlist.link.match(/spotify.com\/(.*)/)[1].gsub('/', '%3A')
   end
 end
+
+# identify the festival... need festival id or name in params
+# get the lineup
+# lineup = Festival.find(id).get_lineup(day)
+
+# get the top songs
+# Artist#top_track
+# Playlist.new.tracks << Song.new.top_track(artist)
+# lineup.each {|artist| playlist_tracks << artist.top_track}
+
+# generate playlist
+# Playlist.new.generate_playlist(title, playlist_tracks)
