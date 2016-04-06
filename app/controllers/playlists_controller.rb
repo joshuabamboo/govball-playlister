@@ -27,7 +27,7 @@ end
 
 # identify the festival... need festival id or name in params
 # get the lineup
-# lineup = Festival.find(id).get_lineup(day)
+# lineup = Festival.find(id).get_lineup
 
 # get the top songs
 # Artist#top_track

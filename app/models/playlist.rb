@@ -3,7 +3,6 @@ class Playlist < ActiveRecord::Base
   attr_accessor :user
 
   def generate_playlist(title, tracks)
-    @user = user
     pl = client.create_playlist!(title)
     pl.add_tracks!(tracks)
     pl
@@ -45,6 +44,7 @@ class Playlist < ActiveRecord::Base
   def convert_artists_to_rspotify_objects(artists)
     spotify_artists = []
     artists.select do |artist|
+      client
       spotify_artists << RSpotify::Artist.search(artist.name).first
     end
     spotify_artists
