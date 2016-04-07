@@ -1,5 +1,5 @@
 <% if logged_in? %>
-<div class="top-tracks-header">
+<div class="header">
   <h1>Top Tracks</h1>
 </div>
 <div class="col-md-offset-1 col-xs-offset-3">
@@ -32,6 +32,14 @@
     <% end %>
   </div>
 </div>
+
+
+
+<div class="header">
+  <h1>Create Custom Playlist</h1>
+</div>
+
+<%= render "playlists/table" %>
 
 
 <% else %>

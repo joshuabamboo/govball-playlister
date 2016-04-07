@@ -23,6 +23,11 @@ class PlaylistsController < ApplicationController
     @playlist = Playlist.find(params[:id])
     @embed_data = @playlist.link.match(/spotify.com\/(.*)/)[1].gsub('/', '%3A')
   end
+
+  private
+    def client
+      SpotifyClient.for(current_user)
+    end
 end
 
 # identify the festival... need festival id or name in params
