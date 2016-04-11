@@ -3,6 +3,7 @@ class PlaylistsController < ApplicationController
   def new
     @user = current_user
     @playlist = Playlist.new
+    @festival = Festival.first #change to be dynamic later
   end
 
   def create
