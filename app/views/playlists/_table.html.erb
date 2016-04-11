@@ -4,7 +4,7 @@
       <tr>
         <% @festival.festival_days.each do |fest_day| %>
           <th class="gc-date" data-date=<%= fest_day.start_date.strftime("%m-%e-%Y") %>>
-            <%= fest_day.start_date.strftime("%A, %B %eth") %><br>
+            <%= fest_day.start_date.strftime("%A, %B %eth") %>
           </th>
         <% end %>
       </tr>
@@ -16,11 +16,13 @@
             <ul>
               <% fest_day.artists.each do |artist| %>
                 <li class="gc-favorite-container gc-item clearfix" data-title=<%= artist.name %> data-tags=" ">
-                  <%#= check_box_tag "artist_ids[]", artist.id %>
+                  <div class="col-xs-1">
+                    <%= check_box_tag "artist_ids[]", artist.id %>
+                  </div>
                   <!-- <button type="button" class="gc-favorite" data-fav-title=<%#= artist.name %> data-fav-type="artist" data-fav-id="108"><span class="glyphicon glyphicon-star"></span></button> -->
-                  <div class="gc-containerInfos">
+                  <div class="gc-containerInfos col-xs-10">
                     <a rel="widget" data-widget-params="artist$the-strokes/108" href="http://governorsballmusicfestival.com/lineup/#!programmation=artist$the-strokes/108">
-                      <span class="gc-time"></span> <div class="gc-containerTitleFav"><span class="gc-title"><%= artist.name %></span></div>
+                      <span class="gc-time"></span> <div class="gc-containerTitleFav"><span class="gc-title"><%= artist.name.titleize %></span></div>
                     </a>
                   </div>
                 </li>
@@ -31,4 +33,5 @@
       </tr>
     </tbody>
   </table>
+  <%= submit_tag "Create Custom Playlist", class: "btn-success" %>
 <% end %>
