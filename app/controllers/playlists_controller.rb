@@ -11,7 +11,7 @@ class PlaylistsController < ApplicationController
     # CUSTOM PLAYLIST
     if artist_params[:artist_ids]
       tracks = playlist.get_custom_tracks(artist_params[:artist_ids], current_user)
-      spotify_pl = playlist.generate_playlist("GovBall Custom", tracks)
+      spotify_pl = playlist.generate_playlist(artist_params["title"], tracks)
     else
       # TOP TRACK PLAYLISTS
       playlist = Playlist.new
@@ -39,7 +39,7 @@ class PlaylistsController < ApplicationController
     end
 
     def artist_params
-      params.permit(:artist_ids => [])
+      params.permit(:title, :artist_ids => [])
     end
 end
 
