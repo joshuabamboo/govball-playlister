@@ -2,6 +2,19 @@ class Playlist < ActiveRecord::Base
   belongs_to :user
   attr_accessor :user
 
+  def get_custom_tracks(artist_ids, current_user)
+    @user = current_user
+    # find each artist
+    artists = []
+    artist_ids.each do |id|
+      artists << Artist.find(id)
+    end
+    # convert_artists_to_rspotify_objects
+    spotify_artists = convert_artists_to_rspotify_objects(artists)
+    # get_top_tracks
+    get_top_tracks(spotify_artists)
+  end
+
   def generate_playlist(title, tracks)
     pl = client.create_playlist!(title)
     pl.add_tracks!(tracks)
@@ -44,7 +57,7 @@ class Playlist < ActiveRecord::Base
   def convert_artists_to_rspotify_objects(artists)
     spotify_artists = []
     artists.select do |artist|
-      client
+      client #passing in the current_user to access here doesnt feel right
       spotify_artists << RSpotify::Artist.search(artist.name).first
     end
     spotify_artists

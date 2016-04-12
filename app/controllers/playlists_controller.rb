@@ -8,13 +8,21 @@ class PlaylistsController < ApplicationController
 
   def create
     playlist = Playlist.new
-    tracks = playlist.get_top_tracks_for("Governors Ball", params[:playlist_day], current_user)
-    if params[:playlist_day] == "all"
-      pl = playlist.generate_playlist("GovBall 2016 Top Tracks", tracks)
+    # CUSTOM PLAYLIST
+    if artist_params[:artist_ids]
+      tracks = playlist.get_custom_tracks(artist_params[:artist_ids], current_user)
+      spotify_pl = playlist.generate_playlist("GovBall Custom", tracks)
     else
-      pl = playlist.generate_playlist("GovBall Top Tracks: #{params[:playlist_day]}", tracks)
+      # TOP TRACK PLAYLISTS
+      playlist = Playlist.new
+      tracks = playlist.get_top_tracks_for("Governors Ball", params[:playlist_day], current_user)
+      if params[:playlist_day] == "all"
+        spotify_pl = playlist.generate_playlist("GovBall 2016 Top Tracks", tracks)
+      else
+        spotify_pl = playlist.generate_playlist("GovBall Top Tracks: #{params[:playlist_day]}", tracks)
+      end
     end
-    playlist.create_from_spotify(pl, current_user)
+    playlist.create_from_spotify(spotify_pl, current_user)
     if playlist.save
       redirect_to playlist
     end
@@ -28,6 +36,10 @@ class PlaylistsController < ApplicationController
   private
     def client
       SpotifyClient.for(current_user)
+    end
+
+    def artist_params
+      params.permit(:artist_ids => [])
     end
 end
 
