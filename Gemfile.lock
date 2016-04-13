@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:joshuabamboo/rspotify.git
+  remote: https://github.com/joshuabamboo/rspotify.git
   revision: 10aca35802edac7235564a997c9d9b5e338b5cbd
   specs:
     rspotify (1.17.0)
