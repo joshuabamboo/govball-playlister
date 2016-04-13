@@ -1,6 +1,6 @@
 <%= form_tag "/playlists" do %>
-  <div class="input-group input-group-lg col-md-offset-2">
-    <%= text_field_tag :title, nil, class: "form-control", placeholder: "Title Your Playlist", size: 100%>
+  <div class="input-group col-md-offset-2">
+    <%= text_field_tag :title, nil, class: "playlist-title-input", placeholder: "Create a title for your playlist" %>
   </div>
   <br>
   <table class="gc-grid-inline table gc-venues">
