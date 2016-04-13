@@ -1,1 +1,7 @@
-<iframe class="spotify-iframe" src="https://embed.spotify.com/?uri=spotify%3A<%= @embed_data %>" width="100%" frameborder="10" allowtransparency="true"></iframe>
+<iframe class="spotify-iframe" src="https://embed.spotify.com/?uri=spotify%3A<%= @embed_data %>" width="100%" allowtransparency="true"></iframe>
+
+<div class="header">
+  <h1>Recommended Playlists</h1>
+  <h2>Top Track Playlists by Day</h2>
+</div>
+<%= render "playlists/top_tracks" %>
