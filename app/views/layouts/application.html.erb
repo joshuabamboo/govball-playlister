@@ -13,9 +13,10 @@
 
   <% if flash[:notice] %>
     <div class="alert alert-success">
-      <strong><%= flash[:notice] %></strong> 
+      <strong><%= flash[:notice] %></strong>
     </div>
   <% end %>
+  
   <%= yield %>
 
 </body>
