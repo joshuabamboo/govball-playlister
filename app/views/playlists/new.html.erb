@@ -1,12 +1,5 @@
-<% if logged_in? %>
-
 <div class="header">
   <h1>Create Custom Playlist</h1>
 </div>
 <br><br>
 <%= render "playlists/table" %>
-
-
-<% else %>
-  <%= link_to 'Sign in with Spotify', '/auth/spotify' %>
-<% end %>
