@@ -16,8 +16,10 @@
       <strong><%= flash[:notice] %></strong>
     </div>
   <% end %>
-  
+
   <%= yield %>
+
+  <%= render "layouts/footer" %>
 
 </body>
 </html>
