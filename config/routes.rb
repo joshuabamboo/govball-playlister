@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  get 'playlists/new'
-
-  get 'playlists/create'
-
   resources :playlists
-  root 'users#index'
-  resources :users
+  resources :users, only: :new
+  root 'playlists#new'
+  get 'playlists/new'
+  get 'playlists/create'
   get 'auth/spotify/callback', to: 'sessions#create'
   get 'logout', to: 'sessions#delete'
   # The priority is based upon order of creation: first created -> highest priority.
