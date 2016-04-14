@@ -1,35 +1,37 @@
-<div class="festival-form col-md-3 col-xs-10">
-  <h1>Friday Top Tracks</h1>
-  <iframe class="top-track-iframe" src="https://embed.spotify.com/?uri=spotify%3Auser%3A12128001353%3Aplaylist%3A6AcDoRPFNIK7l5aTVkU6GG" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-  <%= form_tag(playlists_path, method: :post) do %>
-    <%= hidden_field_tag "playlist_day", "Fri, 03 Jun 2016" %>
-    <%= submit_tag "Friday GovBall Playlist", class: "btn btn-success" %>
-  <% end %>
-</div>
+<div class="recommended-playlists">
+  <div class="festival-form col-md-3 col-xs-10">
+    <h1>Friday Top Tracks</h1>
+    <iframe class="top-track-iframe" src="https://embed.spotify.com/?uri=spotify%3Auser%3A12128001353%3Aplaylist%3A6AcDoRPFNIK7l5aTVkU6GG" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+    <%= form_tag(playlists_path, method: :post) do %>
+      <%= hidden_field_tag "playlist_day", "Fri, 03 Jun 2016" %>
+      <%= submit_tag "Friday GovBall Playlist", class: "btn btn-success" %>
+    <% end %>
+  </div>
 
-<div class="festival-form col-md-3 col-xs-10">
-  <h1>Saturday Top Tracks</h1>
-  <iframe class="top-track-iframe" src="https://embed.spotify.com/?uri=spotify%3Auser%3A12128001353%3Aplaylist%3A5YmZtrDQ1yB3JtqIgVhKDa" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-  <%= form_tag(playlists_path, method: :post) do %>
-    <%= hidden_field_tag "playlist_day", "Sat, 04 Jun 2016" %>
-    <%= submit_tag "Saturday GovBall Playlist", class: "btn btn-success" %>
-  <% end %>
-</div>
+  <div class="festival-form col-md-3 col-xs-10">
+    <h1>Saturday Top Tracks</h1>
+    <iframe class="top-track-iframe" src="https://embed.spotify.com/?uri=spotify%3Auser%3A12128001353%3Aplaylist%3A5YmZtrDQ1yB3JtqIgVhKDa" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+    <%= form_tag(playlists_path, method: :post) do %>
+      <%= hidden_field_tag "playlist_day", "Sat, 04 Jun 2016" %>
+      <%= submit_tag "Saturday GovBall Playlist", class: "btn btn-success" %>
+    <% end %>
+  </div>
 
-<div class="festival-form col-md-3 col-xs-10">
-  <h1>Sunday Top Tracks</h1>
-  <iframe class="top-track-iframe" src="https://embed.spotify.com/?uri=spotify%3Auser%3A12128001353%3Aplaylist%3A3t6uAttJfR9GQar0zjqobW" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-  <%= form_tag(playlists_path, method: :post) do %>
-    <%= hidden_field_tag "playlist_day", "Sun, 05 Jun 2016" %>
-    <%= submit_tag "Sunday GovBall Playlist", class: "btn btn-success" %>
-  <% end %>
-</div>
+  <div class="festival-form col-md-3 col-xs-10">
+    <h1>Sunday Top Tracks</h1>
+    <iframe class="top-track-iframe" src="https://embed.spotify.com/?uri=spotify%3Auser%3A12128001353%3Aplaylist%3A3t6uAttJfR9GQar0zjqobW" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+    <%= form_tag(playlists_path, method: :post) do %>
+      <%= hidden_field_tag "playlist_day", "Sun, 05 Jun 2016" %>
+      <%= submit_tag "Sunday GovBall Playlist", class: "btn btn-success" %>
+    <% end %>
+  </div>
 
-<div class="festival-form col-md-3 col-xs-10">
-  <h1>All Top Tracks</h1>
-  <iframe class="top-track-iframe" src="https://embed.spotify.com/?uri=spotify%3Auser%3A12128001353%3Aplaylist%3A2y1v3gvA7MbRMP7q8AtFQu" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-  <%= form_tag(playlists_path, method: :post) do %>
-    <%= hidden_field_tag "playlist_day", "all" %>
-    <%= submit_tag "GovBall 2016 Top Tracks", class: "btn btn-success" %>
-  <% end %>
+  <div class="festival-form col-md-3 col-xs-10">
+    <h1>All Top Tracks</h1>
+    <iframe class="top-track-iframe" src="https://embed.spotify.com/?uri=spotify%3Auser%3A12128001353%3Aplaylist%3A2y1v3gvA7MbRMP7q8AtFQu" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+    <%= form_tag(playlists_path, method: :post) do %>
+      <%= hidden_field_tag "playlist_day", "all" %>
+      <%= submit_tag "GovBall 2016 Top Tracks", class: "btn btn-success" %>
+    <% end %>
+  </div>
 </div>
