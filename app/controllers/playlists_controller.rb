@@ -13,15 +13,6 @@ class PlaylistsController < ApplicationController
     if artist_params[:artist_ids]
       tracks = playlist.get_custom_tracks(artist_params[:artist_ids], current_user)
       spotify_pl = playlist.generate_playlist(artist_params["title"], tracks)
-    else
-      # TOP TRACK PLAYLISTS
-      playlist = Playlist.new
-      tracks = playlist.get_top_tracks_for("Governors Ball", params[:playlist_day], current_user)
-      if params[:playlist_day] == "all"
-        spotify_pl = playlist.generate_playlist("GovBall 2016 Top Tracks", tracks)
-      else
-        spotify_pl = playlist.generate_playlist("GovBall Top Tracks: #{params[:playlist_day]}", tracks)
-      end
     end
     playlist.create_from_spotify(spotify_pl, current_user)
     if playlist.save
