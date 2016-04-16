@@ -2,8 +2,9 @@
   <div class="festival-form col-md-3 col-xs-10">
     <h1>Friday Top Tracks</h1>
     <iframe class="top-track-iframe" src="https://embed.spotify.com/?uri=spotify%3Auser%3A12128001353%3Aplaylist%3A6AcDoRPFNIK7l5aTVkU6GG" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-    <%= form_tag(playlists_path, method: :post) do %>
-      <%= hidden_field_tag "playlist_day", "Fri, 03 Jun 2016" %>
+    <%= form_tag(follow_path, method: :post, remote: true, class: "follow", id: "6AcDoRPFNIK7l5aTVkU6GG") do %>
+      <%= hidden_field_tag "user", "12128001353" %>
+      <%= hidden_field_tag "playlist", "6AcDoRPFNIK7l5aTVkU6GG" %>
       <%= submit_tag "Friday GovBall Playlist", class: "btn btn-success" %>
     <% end %>
   </div>
@@ -11,8 +12,9 @@
   <div class="festival-form col-md-3 col-xs-10">
     <h1>Saturday Top Tracks</h1>
     <iframe class="top-track-iframe" src="https://embed.spotify.com/?uri=spotify%3Auser%3A12128001353%3Aplaylist%3A5YmZtrDQ1yB3JtqIgVhKDa" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-    <%= form_tag(playlists_path, method: :post) do %>
-      <%= hidden_field_tag "playlist_day", "Sat, 04 Jun 2016" %>
+    <%= form_tag(follow_path, method: :post, remote: true, class: "follow", id: "5YmZtrDQ1yB3JtqIgVhKDa") do %>
+    <%= hidden_field_tag "user", "12128001353" %>
+    <%= hidden_field_tag "playlist", "5YmZtrDQ1yB3JtqIgVhKDa" %>
       <%= submit_tag "Saturday GovBall Playlist", class: "btn btn-success" %>
     <% end %>
   </div>
@@ -20,8 +22,9 @@
   <div class="festival-form col-md-3 col-xs-10">
     <h1>Sunday Top Tracks</h1>
     <iframe class="top-track-iframe" src="https://embed.spotify.com/?uri=spotify%3Auser%3A12128001353%3Aplaylist%3A3t6uAttJfR9GQar0zjqobW" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-    <%= form_tag(playlists_path, method: :post) do %>
-      <%= hidden_field_tag "playlist_day", "Sun, 05 Jun 2016" %>
+    <%= form_tag(follow_path, method: :post, remote: true, class: "follow", id: "3t6uAttJfR9GQar0zjqobW") do %>
+    <%= hidden_field_tag "user", "12128001353" %>
+    <%= hidden_field_tag "playlist", "3t6uAttJfR9GQar0zjqobW" %>
       <%= submit_tag "Sunday GovBall Playlist", class: "btn btn-success" %>
     <% end %>
   </div>
@@ -29,8 +32,9 @@
   <div class="festival-form col-md-3 col-xs-10">
     <h1>All Top Tracks</h1>
     <iframe class="top-track-iframe" src="https://embed.spotify.com/?uri=spotify%3Auser%3A12128001353%3Aplaylist%3A2y1v3gvA7MbRMP7q8AtFQu" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-    <%= form_tag(playlists_path, method: :post) do %>
-      <%= hidden_field_tag "playlist_day", "all" %>
+    <%= form_tag(follow_path, method: :post, remote: true, class: "follow", id: "2y1v3gvA7MbRMP7q8AtFQu") do %>
+    <%= hidden_field_tag "user", "12128001353" %>
+    <%= hidden_field_tag "playlist", "2y1v3gvA7MbRMP7q8AtFQu" %>
       <%= submit_tag "GovBall 2016 Top Tracks", class: "btn btn-success" %>
     <% end %>
   </div>

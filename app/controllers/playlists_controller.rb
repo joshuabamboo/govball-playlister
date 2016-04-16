@@ -34,6 +34,17 @@ class PlaylistsController < ApplicationController
     @embed_data = @playlist.link.match(/spotify.com\/(.*)/)[1].gsub('/', '%3A')
   end
 
+  def follow
+    user = client
+    playlist = RSpotify::Playlist.find(follow_params[:user], follow_params[:playlist])
+    if playlist.is_followed_by?([user])
+      user.unfollow(playlist)
+    else
+      user.follow(playlist)
+    end
+    @id = follow_params[:playlist]
+  end
+
   private
     def client
       SpotifyClient.for(current_user)
@@ -41,6 +52,10 @@ class PlaylistsController < ApplicationController
 
     def artist_params
       params.permit(:title, :artist_ids => [])
+    end
+
+    def follow_params
+      params.permit(:user, :playlist)
     end
 end
 

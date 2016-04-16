@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'playlists/create'
   get 'auth/spotify/callback', to: 'sessions#create'
   get 'logout', to: 'sessions#delete'
+  post 'playlists/follow', to: 'playlists#follow', as: :follow
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

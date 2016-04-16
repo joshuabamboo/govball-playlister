@@ -1,0 +1,15 @@
+$form = $("form#<%= @id %>")
+$btn = $("form#<%= @id %> .btn")
+if ($form.hasClass("following")) {
+  // remove class
+  $form.removeClass("following");
+  $btn.removeClass("btn-success");
+  // change text of button
+  $btn.attr('value', 'Follow This Playlist');
+} else {
+  $form.addClass("following");
+  // change text of button
+  $btn.attr('value', 'Following');
+  // add class
+  $btn.attr('class', 'btn btn-success');
+}
