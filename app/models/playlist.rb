@@ -12,7 +12,20 @@ class Playlist < ActiveRecord::Base
     # convert_artists_to_rspotify_objects
     spotify_artists = convert_artists_to_rspotify_objects(artists)
     # get_top_tracks
-    get_top_tracks(spotify_artists)
+    case artists.size
+    when 1..2
+      get_top_tracks(spotify_artists, count: 10)
+    when 3..4
+      get_top_tracks(spotify_artists, count: 5)
+    when 5..6
+      get_top_tracks(spotify_artists, count: 4)
+    when 7..8
+      get_top_tracks(spotify_artists, count: 3)
+    when 9..15
+      get_top_tracks(spotify_artists, count: 2)
+    else
+      get_top_tracks(spotify_artists)
+    end
   end
 
   def generate_playlist(title, tracks)
@@ -63,12 +76,12 @@ class Playlist < ActiveRecord::Base
     spotify_artists
   end
 
-  def get_top_tracks(spotify_artists)
+  def get_top_tracks(spotify_artists, count: 1)
     tracks = []
     spotify_artists.collect do |artist|
-      tracks << artist.top_tracks(:US).first
+      tracks << artist.top_tracks(:US).sample(count)
     end
-    tracks
+    tracks.flatten.shuffle!
   end
 
 
