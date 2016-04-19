@@ -1,7 +1,14 @@
-<iframe class="spotify-iframe" src="https://embed.spotify.com/?uri=spotify%3A<%= @embed_data %>" width="100%" allowtransparency="true"></iframe>
-
-<div class="header">
-  <h1>Recommended Playlists</h1>
-  <h2>Top Track Playlists by Day</h2>
+<div class="col-md-6">
+  <iframe class="spotify-iframe" src="https://embed.spotify.com/?uri=spotify%3A<%= @embed_data %>" width="100%" allowtransparency="true"></iframe>
 </div>
-<%= render "playlists/top_tracks" %>
+<div class="col-md-6 header">
+  <h1> <%= "Crazzzzy title goes here" %> </h1>
+</div>
+
+<div class="col-md-12">
+  <div class="header">
+    <h1>Recommended Playlists</h1>
+    <h2>Top Track Playlists by Day</h2>
+  </div>
+  <%= render "playlists/top_tracks" %>
+</div>
