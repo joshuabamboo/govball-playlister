@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :playlists
+  has_many :playlists_owned, class_name: "Playlist"
 
   def self.create_from_oauth(auth_hash)
     self.create(

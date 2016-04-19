@@ -1,5 +1,6 @@
 class Playlist < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :owner, class_name: "User", foreign_key: "user_id"
+
   attr_accessor :user
 
   def get_custom_tracks(artist_ids, current_user)
