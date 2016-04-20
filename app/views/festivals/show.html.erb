@@ -1,1 +1,13 @@
-<%= image_tag("#{@fest.name.downcase.split.join("-")}.png") %>
+<div class="col-md-offset-4 col-sm-offset-3">
+  <%= image_tag("#{@fest.name.downcase.split.join("-")}.png") %>
+  <h1> <%= link_to "Browse", festival_playlists_path(@fest) %> or <%= link_to "Create your own", new_festival_playlist_path(@fest) %> </h1>
+</div>
+
+
+<div class="col-md-12">
+  <div class="header">
+    <h1>Recommended Playlists</h1>
+    <h2>Top Track Playlists by Day</h2>
+  </div>
+  <%= render "playlists/top_tracks" %>
+</div>
