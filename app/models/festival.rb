@@ -1,6 +1,7 @@
 class Festival < ActiveRecord::Base
   belongs_to :organizer
   has_many :festival_days
+  has_many :playlists
 
   # def get_lineup
   #   lineup = {}

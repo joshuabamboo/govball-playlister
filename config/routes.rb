@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'playlists/index'
+
   # resources :playlists
   resources :users, only: :new
   resources :festivals do

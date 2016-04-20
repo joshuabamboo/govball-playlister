@@ -1,10 +1,14 @@
 class PlaylistsController < ApplicationController
   before_action :authenticate_user
 
+  def index
+    @playlists = Festival.find(params[:festival_id]).playlists
+  end
+
   def new
     @user = current_user
     @playlist = Playlist.new
-    @festival = Festival.first #change to be dynamic later
+    @festival = Festival.find(params[:festival_id])
   end
 
   def create
@@ -15,6 +19,8 @@ class PlaylistsController < ApplicationController
       spotify_pl = playlist.generate_playlist(artist_params["title"], tracks)
     end
     playlist.create_from_spotify(spotify_pl, current_user)
+    # playlist.festival = Festival.find(params)
+    binding.pry
     if playlist.save
       redirect_to playlist
     end

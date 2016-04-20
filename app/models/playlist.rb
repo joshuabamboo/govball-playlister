@@ -1,5 +1,6 @@
 class Playlist < ActiveRecord::Base
   belongs_to :owner, class_name: "User", foreign_key: "user_id"
+  belongs_to :festival
 
   attr_accessor :user
 
