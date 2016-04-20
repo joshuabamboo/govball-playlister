@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   resources :playlists
   resources :users, only: :new
+  resources :festivals, only: [:index, :show]
   root 'playlists#new'
-  get 'playlists/new'
-  get 'playlists/create'
   get 'auth/spotify/callback', to: 'sessions#create'
   get 'logout', to: 'sessions#delete'
   post 'playlists/follow', to: 'playlists#follow', as: :follow
