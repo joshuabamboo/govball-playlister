@@ -40,7 +40,7 @@ class Playlist < ActiveRecord::Base
     self.update(
       link: spotify_playlist.external_urls['spotify'],
       title: spotify_playlist.name,
-      user_id: user.id
+      spotify_id: spotify_playlist.id
     )
   end
 

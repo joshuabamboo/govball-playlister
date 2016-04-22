@@ -20,9 +20,9 @@ class PlaylistsController < ApplicationController
       spotify_pl = playlist.generate_playlist(artist_params["title"], tracks)
     end
     playlist.create_from_spotify(spotify_pl, current_user)
-    # playlist.festival = Festival.find(params)
+    playlist.owner = current_user
     if playlist.save
-      redirect_to playlist
+      redirect_to festival_playlist_path(festival, playlist)
     end
   end
 
