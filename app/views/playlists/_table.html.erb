@@ -1,6 +1,6 @@
-<%= form_tag "/playlists" do %>
+<%= form_for [@festival, @playlist] do |f| %>
   <div class="input-group col-md-offset-2">
-    <%= text_field_tag :title, nil, class: "playlist-title-input", placeholder: "Create a title for your playlist" %>
+    <%= f.text_field :title, class: "playlist-title-input", placeholder: "Create a title for your playlist" %>
   </div>
   <br>
   <table class="gc-grid-inline table gc-venues">
@@ -18,24 +18,26 @@
         <% @festival.festival_days.each do |fest_day| %>
           <td data-date="2016-06-03" class="gc-shows-cell no-left-border">
             <ul>
-              <% fest_day.artists.each do |artist| %>
-                <li class="gc-favorite-container gc-item clearfix" data-title=<%= artist.name %> data-tags=" ">
-                  <div class="col-xs-1">
-                    <%= check_box_tag "artist_ids[]", artist.id %>
-                  </div>
-                  <!-- <button type="button" class="gc-favorite" data-fav-title=<%#= artist.name %> data-fav-type="artist" data-fav-id="108"><span class="glyphicon glyphicon-star"></span></button> -->
-                  <div class="gc-containerInfos col-xs-10">
-                    <a rel="widget" data-widget-params="artist$the-strokes/108" href="http://www.google.com/search?q=<%= artist.name %>" target="_blank">
-                      <span class="gc-time"></span> <div class="gc-containerTitleFav"><span class="gc-title"><%= artist.name.titleize %></span></div>
-                    </a>
-                  </div>
-                </li>
-              <% end %>
+              <%#= fields_for "playlist[artist_attributes][]", artist, index: nil do |form| %>
+                <% fest_day.artists.each do |artist| %>
+                  <li class="gc-favorite-container gc-item clearfix" data-title=<%= artist.name %> data-tags=" ">
+                    <div class="col-xs-1">
+                        <%= check_box_tag "playlist[artist_ids][]", artist.id %>
+                    </div>
+                    <!-- <button type="button" class="gc-favorite" data-fav-title=<%#= artist.name %> data-fav-type="artist" data-fav-id="108"><span class="glyphicon glyphicon-star"></span></button> -->
+                    <div class="gc-containerInfos col-xs-10">
+                      <a rel="widget" data-widget-params="artist$the-strokes/108" href="http://www.google.com/search?q=<%= artist.name %>" target="_blank">
+                        <span class="gc-time"></span> <div class="gc-containerTitleFav"><span class="gc-title"><%= artist.name.titleize %></span></div>
+                      </a>
+                    </div>
+                  </li>
+                <% end %>
+              <%# end %>
             </ul>
           </td>
         <% end %>
       </tr>
     </tbody>
   </table>
-  <%= submit_tag "Create Custom Playlist", class: "btn btn-success" %>
+  <%= f.submit "Create Custom Playlist", class: "btn btn-success" %>
 <% end %>

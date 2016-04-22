@@ -12,7 +12,8 @@ class PlaylistsController < ApplicationController
   end
 
   def create
-    playlist = Playlist.new
+    festival = Festival.find(params[:festival_id])
+    playlist = festival.playlists.new
     # CUSTOM PLAYLIST
     if artist_params[:artist_ids]
       tracks = playlist.get_custom_tracks(artist_params[:artist_ids], current_user)
@@ -20,7 +21,6 @@ class PlaylistsController < ApplicationController
     end
     playlist.create_from_spotify(spotify_pl, current_user)
     # playlist.festival = Festival.find(params)
-    binding.pry
     if playlist.save
       redirect_to playlist
     end
@@ -48,7 +48,7 @@ class PlaylistsController < ApplicationController
     end
 
     def artist_params
-      params.permit(:title, :artist_ids => [])
+      params.require(:playlist).permit(:title, :artist_ids => [])
     end
 
     def follow_params

@@ -1,6 +1,6 @@
 <div class="col-md-offset-4 col-sm-offset-3">
   <%= image_tag("#{@fest.name.downcase.split.join("-")}.png") %>
-  <h1> <%= link_to "Browse", festival_playlists_path(@fest) %> or <%= link_to "Create your own", new_festival_playlist_path(@fest) %> </h1>
+    <h1> <%= link_to "Browse Playlists", festival_playlists_path(@fest), class: "btn btn-lg btn-primary" %> or <%= link_to "Create your own", new_festival_playlist_path(@fest), class: "btn btn-lg btn-success" %> </h1>
 </div>
 
 
