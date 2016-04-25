@@ -26,6 +26,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rspotify', git: "https://github.com/joshuabamboo/rspotify.git"
 # All the pretty
 gem 'bootstrap-sass'
+# All the pretty fonts
+gem 'font-awesome-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
