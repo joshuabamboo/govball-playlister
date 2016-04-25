@@ -1,0 +1,122 @@
+
+
+$skin: #fff;
+$color01: #f5f5f5;
+$color02: #dadada;
+$color03: #c1c1c1;
+$color04: #a7a7a7;
+$color05: #8e8e8e;
+$color06: #737373;
+$color07: #5d5d5d;
+$color08: #4a4a4a;
+$color09: #404040;
+$color10: #303030;
+
+$hovercolor: #e74c3c;
+$accentcolor: #007EA7;
+
+$red: #e74c3c;
+$orange: #e67e22;
+$green: #1abc9c;
+$blue: #3498db;
+$darkblue: #1c4a6c;
+$cyan: #9b59b6;
+$yellow: #d9a81d;
+$l-grey: #f2f2f2;
+$grey: #999;
+
+$bg-texture-01: url('../images/backgrounds/skin_side_up.png');
+$bg-texture-02: url('../images/rs-images/02.jpg');
+$bg-texture-03: url('../images/backgrounds/tweed.png');
+
+.e-bg-light-texture {background: $bg-texture-01 ;}
+.e-bg-texture-02 {
+  background: $bg-texture-02;
+  background-size: cover;
+}
+.e-bg-texture-03 {background: $bg-texture-03 ;}
+
+//Background Color Classes
+.color01 {background-color: $color01 !important;}
+.color02 {background-color: $color02 !important;}
+.color03 {background-color: $color03 !important;}
+.color04 {background-color: $color04 !important;}
+.color05 {background-color: $color05 !important;}
+.color06 {background-color: $color06 !important;}
+.color07 {background-color: $color07 !important;}
+.color08 {background-color: $color08 !important;}
+.color09 {background-color: $color09 !important;}
+.color10 {background-color: $color10 !important;}
+
+.red {background-color: $red !important;}
+.orange {background-color: $orange !important;}
+.green {background-color: $green !important;}
+.blue {background-color: $blue !important;}
+.darkblue {background-color: $darkblue !important;}
+.cyan {background-color: $cyan !important;}
+.yellow {background-color: $yellow !important;}
+.l-grey {background-color: $l-grey !important;}
+.grey {background-color: $grey !important;}
+.skin {background-color: $skin !important;}
+
+//Font/link Colors
+.fontcolor-regular, .fontcolor-regular a {color: $color10 !important;;}
+.fontcolor-invert, .fontcolor-invert a {color: $skin !important;}
+.fontcolor-medium, .fontcolor-medium a {color: $color06 !important;}
+.fontcolor-medium-light, .fontcolor-medium-light a {color: $color05 !important;}
+.hovercolor, .hovercolor a {color: $hovercolor !important;}
+.accent-color, .accent-color a {color: $accentcolor !important;}
+.accent-color a:hover {color: $hovercolor !important;}
+
+.texture-overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/grid.png);
+}
+
+
+/* Clearfix */
+.clearfix:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0px;
+  clear: both;
+}
+@mixin clearfix() {
+  &:before,
+  &:after {  content: "";  display: table;  }
+  &:after {  clear: both;  }
+}
+
+
+/* Block Background Classes */
+
+.e-bg-skin {background: $skin;}
+.e-bg-light {  background: $color01;  }
+.e-bg-medium {background: $color02;}
+.e-bg-dark {  background: $color07; color: $color01; }
+.e-bg-darker {  background: $color08; color: $color01; }
+.e-bg-darkest {  background: $color09; color: $color01; }
+.e-bg-accent { background: $accentcolor; color: $color01;}
+.e-bg-section {
+  @include clearfix;
+  overflow: hidden; // added for pseudo-element
+  position: relative; // added for pseudo-element
+  &::before {
+    content: ' ';
+    position: fixed; // instead of background-attachment
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $color02;
+    background: url("../images/section-bg01.jpg") no-repeat center center;
+    background-size: cover;
+    will-change: transform; // creates a new paint layer
+    z-index: -1;
+  }
+}

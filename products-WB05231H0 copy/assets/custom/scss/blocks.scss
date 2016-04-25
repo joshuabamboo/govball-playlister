@@ -1,0 +1,110 @@
+
+
+@mixin block-margins {  padding: 130px 0 130px 0;  }
+@mixin block-ins-margins {  padding: 100px 0 100px 0;  }
+@mixin infoblock-margins {  margin: 0 0 24px 0;  }
+@mixin block-null-margins {  margin: 0 0 0 0;  }
+
+.e-block {  @include block-margins;  }
+.e-block-ins {@include block-ins-margins;}
+.e-block-null {@include block-null-margins;}
+.e-block-light {
+  background: $color01;
+  color: $color10;
+  p, h2, h3, h4, h5 {  color: $color10;  }
+  a, .infoblock a {  color: $color10;
+    &:hover {
+      color: $hovercolor;
+      text-decoration: none;
+    }
+  }
+}
+.e-block-dark {
+  background: $color07;
+  color: $color01;
+  p, h2, h3, h4, h5 {  color: $color05;  }
+  a, .infoblock a {  color: $color01;
+    &:hover {
+      color: $hovercolor;
+      text-decoration: none;
+    }
+  }
+}
+.e-block-darker {
+  background: $color08;
+  color: $color01;
+  p, h2, h3, h4, h5 {  color: $color05;  }
+  a, .infoblock a {  color: $color01;
+    &:hover {
+      color: $hovercolor;
+      text-decoration: none;
+    }
+  }
+}
+.e-block-darkest {
+  background: $color09;
+  color: $color01;
+  p, h2, h3, h4, h5 {  color: $color05;  }
+  a, .infoblock a {  color: $color01;
+    &:hover {
+      color: $hovercolor;
+      text-decoration: none;
+    }
+  }
+}
+.e-block-accent {
+  background: $accentcolor;
+  color: $color01;
+  p, h2, h3, h4, h5 {  color: $color01;  }
+  a, .infoblock a {  color: $color01;
+    &:hover {
+      color: $hovercolor;
+      text-decoration: none;
+    }
+  }
+}
+.e-block-medium {
+  background: $color03;
+  color: $color01;
+  p, h2, h3, h4, h5 {  color: $color01;  }
+  a, .infoblock a {  color: $color01;
+    &:hover {
+      color: $hovercolor;
+      text-decoration: none;
+    }
+  }
+}
+
+.e-block-centered {  text-align: center;  }
+
+.infoblock {
+  @include infoblock-margins;
+  hr {
+    margin-top: 18px;
+    border-top: 3px solid $color07;
+  }
+  a {  color: $color10;
+    &:hover {
+      text-decoration: none;
+      color: $hovercolor;
+    }
+  }
+  .morelink {
+    font-family: $font-accident-one-bold;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 22px;
+    a {
+      color: $color04;
+      text-decoration: none;
+      i {
+        margin-left: 5px;
+        &::before {color: $color04;}
+      }
+      &:hover {color: $hovercolor; text-decoration: none;}
+      &:hover i::before {color: $hovercolor;}
+    }
+  }
+}
