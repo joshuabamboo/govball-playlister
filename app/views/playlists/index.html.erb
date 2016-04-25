@@ -1,3 +1,10 @@
+<div class="col-md-12 col-offset-md-1">
+
+</div>
 <% @playlists.each do |playlist| %>
-  <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A<%= playlist.owner.uid %>%3Aplaylist%3A<%= playlist.spotify_id %>&theme=white&view=coverart" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+  <table class="table table-bordered">
+    <tr>
+      <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A<%= playlist.owner.uid %>%3Aplaylist%3A<%= playlist.spotify_id %>&theme=white&view=coverart" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+    </tr>
+  </table>
 <% end %>

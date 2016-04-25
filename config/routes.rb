@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :playlists
   end
 
-  root 'playlists#new'
+  root 'festivals#index'
   get 'auth/spotify/callback', to: 'sessions#create'
   get 'logout', to: 'sessions#delete'
   post 'playlists/follow', to: 'playlists#follow', as: :follow
