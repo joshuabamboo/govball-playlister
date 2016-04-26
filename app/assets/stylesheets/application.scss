@@ -4,43 +4,60 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,900);
 @import "playlists";
 
+@import "flaticon/flaticon.min";
+@import "rs-plugin/css/settings";
+// @import "rs-plugin/css/layers";
+// @import "rs-plugin/css/navigation";
+@import "mfp/magnific-popup.min";
+@import "progresstracker/css/jquery.progresstracker.min.css";
+@import "offcanvas-menu/css/normalize.min.css";
+@import "animate";
+@import "style";
 
 
-body {
-  font-family: 'Roboto', sans-serif;
-}
 
-body.users {
-  background-color: black;
-}
 
-#welcome-text h1 {
-  font-weight: 900;
-  font-size: 100px;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 90px;
-  color: #ecf0f1;
-  padding-top: 30px;
-}
 
-.welcome-btn {
-  padding-top: 30px;
-}
 
-img#nav-img {
-  height: 60px;
-  border-radius: 50%;
-}
 
-.navbar-nav > li > a, .navbar-brand {
-    padding-top:20px !important;
-    padding-bottom:0 !important;
-    height: 38px;
-}
 
-.navbar {min-height:65px !important;}
 
-.footer {
-
-}
+//
+// body {
+//   font-family: 'Roboto', sans-serif;
+// }
+//
+// body.users {
+//   background-color: black;
+// }
+//
+// #welcome-text h1 {
+//   font-weight: 900;
+//   font-size: 100px;
+//   text-align: center;
+//   vertical-align: middle;
+//   line-height: 90px;
+//   color: #ecf0f1;
+//   padding-top: 30px;
+// }
+//
+// .welcome-btn {
+//   padding-top: 30px;
+// }
+//
+// img#nav-img {
+//   height: 60px;
+//   border-radius: 50%;
+// }
+//
+// .navbar-nav > li > a, .navbar-brand {
+//     padding-top:20px !important;
+//     padding-bottom:0 !important;
+//     height: 38px;
+// }
+//
+// .navbar {min-height:65px !important;}
+//
+// .footer {
+//
+// }
