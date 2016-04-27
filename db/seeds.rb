@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
+# GOVBALL
 org = Organizer.create(name: "Founders Entertainment")
 fest = Festival.create(name: "Governors Ball", year: 2016, start_date: DateTime.new(2016,6,3), finish_date: DateTime.new(2016,6,5))
 fri = FestivalDay.create(start_date: DateTime.new(2016,6,3))
@@ -92,4 +92,39 @@ sun.artists << Artist.create(name: "WHILK & MISKY")
 sun.artists << Artist.create(name: "DAY WAVE")
 sun.artists << Artist.create(name: "BLANK RANGE")
 sun.artists << Artist.create(name: "TOR MILLER")
+sun.save
+
+
+
+# PANORAMA
+org = Organizer.create(name: "Goldenvoice")
+fest = Festival.create(name: "Panorama", year: 2016, start_date: DateTime.new(2016,7,22), finish_date: DateTime.new(2016,7,24))
+fri = FestivalDay.create(start_date: DateTime.new(2016,7,22))
+sat = FestivalDay.create(start_date: DateTime.new(2016,7,23))
+sun = FestivalDay.create(start_date: DateTime.new(2016,7,24))
+
+org.festivals << fest
+org.save
+fest.festival_days << fri
+fest.festival_days << sat
+fest.festival_days << sun
+fest.save
+
+
+fri_artists = ["Arcade Fire","Alabama Shakes","Major Lazer","FKA twigs","Silversun Pickups","ScHoolboy Q","Broken Social Scene","DJ Khaled","Mike D","Lindsey Stirling","Netsky","Preservation Hall Jazz Band","DJ Harvey","Madlib","De Lux Here We Go Magic","White Lung","Algiers","Little Scream","Justin Strauss"]
+fri_artists.each do |a|
+  fri.artists << Artist.create(name: a)
+end
+fri.save
+
+sat_artists = ["Kendrick Lamar","The National","Sufjan Stevens","Flosstradamus","Blood Orange","Foals","Daughter","Anderson .Paak & The Free Nationals","AlunaGeorge","Jai Wolf","Kaytranada","TOKiMONSTA","The Julie Ruin","Oh Wonder","Melanie Martinez","Ex Hex","AURORA","Horse Meat Disco","Museum of Love","Caveman","JDH & Dave P"]
+sat_artists.each do |a|
+  sat.artists << Artist.create(name: a)
+end
+sat.save
+
+sun_artists = ["LCD Soundsystem","Sia","A$AP Rocky","Kurt Vile & the Violators","Run The Jewels","Grace Potter","RÜFÜS DU SOL","Flatbush Zombies","The Front Bottoms","SZA","Nathaniel Rateliff & The Night Sweats","Holy Ghost!","Tourist Tensnake","Classixx","Cassy","Show Me The Body","Prinze George","The Black Madonna","Lloydski"]
+sun_artists.each do |a|
+  sun.artists << Artist.create(name: a)
+end
 sun.save
