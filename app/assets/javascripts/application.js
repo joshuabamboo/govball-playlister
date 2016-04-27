@@ -13,7 +13,6 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require turbolinks
 
 //= require sticky/js/jquery.sticky.min
 //= require mousewheel/js/jquery.mousewheel-3.0.6.pack
@@ -39,4 +38,5 @@
 //= require progresstracker/js/jquery.progresstracker.min
 //= require wow/wow.min
 //= require script
+
 //= require_tree .
