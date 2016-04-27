@@ -1,13 +1,73 @@
-<div class="col-md-offset-4 col-sm-offset-3">
-  <%= image_tag("#{@fest.name.downcase.split.join("-")}.png") %>
-    <h1> <%= link_to "Browse Playlists", festival_playlists_path(@fest), class: "btn btn-lg btn-primary" %> or <%= link_to "Create your own", new_festival_playlist_path(@fest), class: "btn btn-lg btn-success" %> </h1>
-</div>
+<!-- Services Block -->
+<section id="services" class="e-block e-block-centered e-block-skin features-block pt-section" data-name="Services" style="padding-bottom: 0px;">
+   <div class="container">
+      <div class="row">
+         <div class="col-sm-6 wow fadeInDown" data-wow-delay="0.2s" data-wow-offset="10">
+            <h2 class="font-accident-two-bold-italic">Step 2:</h2>
+            <h5 class="font-accident-one-bold title uppercase hovercolor">Browse or Create a Playlist</h5>
+            <div class="dividewhite4"></div>
+            <div class="">
+              <a role="button" href="<%= festival_playlists_path(@fest) %>" class="btn btn-lg btn-grey-str btn-logos wow fadeInDown" data-wow-delay="0.6s" data-wow-offset="10">Browse Playlists</a>
+              <a role="button" href="<%= new_festival_playlist_path(@fest) %>" class="btn btn-lg btn-darker btn-logos wow fadeInDown" data-wow-delay="0.6s" data-wow-offset="10">Create Your Own</a>
+            </div>
+            <div class="dividewhite4"></div>
+         </div>
+         <div class="col-sm-6 wow fadeInDown" data-wow-delay="0.4s" data-wow-offset="10"><%= image_tag("#{@fest.name.downcase.split.join("-")}.png", class: "img-responsive") %></div>
+
+      </div>
+   </div>
+</section>
+<!-- /Services Block -->
 
 
-<div class="col-md-12">
+<!-- Counts Block -->
+<section id="counts" class="counts e-block-ins e-bg-light-texture pt-section" data-stellar-background-ratio="0.5" data-name="Counts">
+   <div class="container">
+      <div class="count-container row">
+         <!-- <div class="col-md-3 count">
+            <div class="count-icon">
+               <i class="flaticon-photo246"></i>
+            </div>
+            <span class=".integers digit font-accident-two-bold">12654</span>
+            <div class="count-text font-accident-one-bold">Photos added</div>
+            <div class="divider-dynamic"></div>
+         </div> -->
+         <div class="col-md-4 count">
+            <div class="count-icon">
+               <i class="fa fa-microphone"></i>
+            </div>
+            <span class=".integers digit font-accident-two-bold">65</span>
+            <div class="count-text font-accident-one-bold">Performers</div>
+            <div class="divider-dynamic"></div>
+         </div>
+         <div class="col-md-4 count">
+            <div class="count-icon">
+               <i class="fa fa-headphones"></i>
+            </div>
+            <span class=".integers digit font-accident-two-bold">9356</span>
+            <div class="count-text font-accident-one-bold">Playlists Created</div>
+            <div class="divider-dynamic"></div>
+         </div>
+         <div class="col-md-4 count">
+            <div class="count-icon">
+               <i class="fa fa-calendar"></i>
+            </div>
+            <span class=".integers digit font-accident-two-bold">156</span>
+            <div class="count-text font-accident-one-bold">Days remaining</div>
+            <div class="divider-dynamic"></div>
+         </div>
+      </div>
+      <div class="dividewhite3"></div>
+   </div>
+</section>
+<!-- /Counts Block -->
+
+
+
+<!-- <div class="col-md-12">
   <div class="header">
     <h1>Recommended Playlists</h1>
     <h2>Top Track Playlists by Day</h2>
   </div>
-  <%= render "playlists/top_tracks" %>
-</div>
+  <%#= render "playlists/top_tracks" %>
+</div> -->
