@@ -3,19 +3,16 @@
    <div class="sticky-header header-dark sticky-overlay nobg" role="navigation">
       <div class="container mp-nav">
          <div id="site-title">
-            <a href="index.html">
-            <h1 class="font-accident-one-bold"><i class="flaticon-scientific3"></i>Festicles</h1></a>
+            <a href="<%= root_path %>">
+            <h1 class="font-accident-one-bold" style="margin-top: 10px;"><i class=""><%= image_tag current_user.image_url, id: "nav-img" %></i>Logo Placeholder</h1></a>
          </div>
 
          <!-- Main top menu -->
-         <nav id="main-menu" class="site-navigation primary-navigation">
+         <nav id="main-menu" class="site-navigation primary-navigation" style="margin-top: 0px;">
             <ul class="sf-menu clearfix" id="example">
-               <li class="m-desktop menu-item"><a href="#header-wrapper-mp">Home</a></li>
-               <%= link_to "<li>Logout</li>".html_safe, logout_path, class: "m-desktop menu-item" %>
-               <li class="m-desktop menu-item"><a href="/logout">Logout</a></li>
-               <li class="m-desktop menu-item"><a href="#team">Team</a></li>
-               <li class="m-desktop menu-item"><a href="#portfolio">Portfolio</a></li>
-               <li class="m-desktop menu-item"><a href="https://wrapbootstrap.com/theme/method-one-page-html-WB05231H0?ref=neuethemes" target="_blank">Buy</a></li>
+               <li class="m-desktop menu-item"><a href="#"><%= image_tag current_user.image_url, id: "nav-img" %></a></li>
+               <li class="m-desktop menu-item"><a href="#"><%= current_user.name %></a></li>
+               <li class="m-desktop menu-item"><a href="<%= logout_path %>">Logout</a></li>
                <li class="mob-button">
                   <div class="menu-button nav-icon" id="open-button">
                      <div></div>
@@ -26,7 +23,6 @@
          <!-- / Main top menu -->
 
       </div>
-
    </div>
 
 </header>

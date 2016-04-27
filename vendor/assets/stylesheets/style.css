@@ -1203,31 +1203,32 @@ ul.sf-menu > li, .sf-menu > li > a {
   #sub-top-light a, #sub-top-light i {
     color: #303030; }
 
+/*Change all #5d5d5d to #fff for white text on the nav before the scroll*/
 #header-wrapper-mp .header-dark {
   background: #5d5d5d; }
   #header-wrapper-mp .header-dark .nav-icon div {
-    background-color: #fff; }
+    background-color: #5d5d5d; }
   #header-wrapper-mp .header-dark .nav-icon::before, #header-wrapper-mp .header-dark .nav-icon::after {
-    background-color: #fff; }
+    background-color: #5d5d5d; }
   #header-wrapper-mp .header-dark .nav-icon:hover:before, #header-wrapper-mp .header-dark .nav-icon:hover:after, #header-wrapper-mp .header-dark .nav-icon:hover div {
     background-color: #e74c3c; }
   #header-wrapper-mp .header-dark #site-title a {
-    color: #fff; }
+    color: #5d5d5d; }
     #header-wrapper-mp .header-dark #site-title a h1 {
-      color: #fff !important; }
+      color: #5d5d5d !important; }
       #header-wrapper-mp .header-dark #site-title a h1 i {
-        color: #fff; }
+        color: #5d5d5d; }
   #header-wrapper-mp .header-dark #mobnav-btn i {
-    color: #fff; }
+    color: #5d5d5d; }
   #header-wrapper-mp .header-dark #main-menu a > i {
-    color: #fff; }
+    color: #5d5d5d; }
   #header-wrapper-mp .header-dark #main-menu a:hover {
-    color: #fff; }
+    color: #5d5d5d; }
   #header-wrapper-mp .header-dark #main-menu > ul > li > a {
-    color: #fff;
+    color: #5d5d5d;
     letter-spacing: 3px; }
   #header-wrapper-mp .header-dark #main-menu > ul > li > .sf-with-ul:after {
-    border-top-color: #fff; }
+    border-top-color: #5d5d5d; }
   #header-wrapper-mp .header-dark .overlay-border {
     position: relative;
     overflow: hidden;

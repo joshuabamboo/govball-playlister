@@ -488,17 +488,18 @@
 
         })();
 
+        // DOESNT WORK FOR LINKS IN THE HEADER IF THE LINKS ARE ON ANOTHER PAGE
         /* Soft Scroll */
-        (function () {
-            $('.nav a, .menu-item a').click(function (e) {
-                softScroll(this, e);
-
-                window.setTimeout(function() {
-                    classie.remove(document.body, 'show-menu');
-                }, 500);
-                return false;
-            });
-        })();
+        // (function () {
+        //     $('.nav a, .menu-item a').click(function (e) {
+        //         softScroll(this, e);
+        //
+        //         window.setTimeout(function() {
+        //             classie.remove(document.body, 'show-menu');
+        //         }, 500);
+        //         return false;
+        //     });
+        // })();
 
         /* Off-Canvas Menu */
         (function () {
