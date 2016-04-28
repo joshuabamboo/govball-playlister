@@ -1,6 +1,35 @@
-<div class="col-md-6">
-  <iframe class="spotify-iframe" src="https://embed.spotify.com/?uri=spotify%3A<%= @embed_data %>" width="100%" height="700" allowtransparency="true"></iframe>
-</div>
-<div class="col-md-6 header">
-  <h1> <%= @playlist.title %> </h1>
-</div>
+
+
+
+<!-- Pricing tables -->
+<section id="pricing" class="e-block e-block-skin e-block-centered pt-section" data-stellar-background-ratio="0.5" data-name="Prices">
+   <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-6 text-center wow fadeInDown" data-wow-delay="0.2s" data-wow-offset="10">
+          <h2 class="font-accident-two-bold-italic"><%= @playlist.title %></h2>
+          <h5 class="font-accident-one-bold title uppercase hovercolor">Lorem ipsum dolor sit amet</h5>
+          <div class="dividewhite4"></div>
+          <p class="small fontcolor-medium-light">
+            Maybe some sort of description is appropriate here. idk.
+            consectetur adipisicing elit, sed do eiusmod tempor
+            incididun ut labore et dolore magna aliqua
+          </p>
+          <div class="dividewhite4"></div>
+          <p class="small fontcolor-medium-light">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <div class="dividewhite4"></div>
+          <%= link_to "Follow", "#", class: "btn btn-default btn-lg btn-rd" %>
+        </div>
+
+        <div class="col-md-6 col-sm-6">
+          <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A<%= @playlist.owner.uid %>%3Aplaylist%3A<%= @playlist.spotify_id %>" width="100%" height="900" frameborder="0" allowtransparency="true"></iframe>
+        </div>
+
+      </div>
+
+   </div>
+</section>
+<!-- /Pricing Tables -->
