@@ -1,10 +1,42 @@
-<div class="col-md-12 col-offset-md-1">
 
-</div>
-<% @playlists.each do |playlist| %>
-  <table class="table table-bordered">
-    <tr>
-      <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A<%= playlist.owner.uid %>%3Aplaylist%3A<%= playlist.spotify_id %>&theme=white&view=coverart" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
-    </tr>
-  </table>
-<% end %>
+<!-- Pricing tables -->
+<section id="pricing" class="e-block e-block-skin e-block-centered pt-section" data-stellar-background-ratio="0.5" data-name="Prices">
+   <div class="container">
+
+      <div class="text-center wow fadeInDown" data-wow-delay="0.2s" data-wow-offset="10">
+         <h2 class="font-accident-two-bold-italic">Top <%= @fest.name %> Playlists</h2>
+         <h5 class="font-accident-one-bold title uppercase hovercolor">Lorem ipsum dolor sit amet</h5>
+         <div class="dividewhite4"></div>
+         <p class="small fontcolor-medium-light">
+            Maybe some sort of description is appropriate here. idk.
+            consectetur adipisicing elit, sed do eiusmod tempor
+            incididun ut labore et dolore magna aliqua
+         </p>
+      </div>
+
+      <div class="dividewhite8"></div>
+      <div class="row">
+
+        <% @playlists.each.with_index(1) do |playlist, index| %>
+          <div class="col-md-4 col-sm-6">
+             <div class="pricing proposal">
+                <div class="price-attrs">
+                   <div class="price-number font-accident-two-bold-italic"><%= index %></div>
+                   <div class="price-plan font-accident-one-normal"><%= playlist.title %></div>
+                   <div class="price-conclusion">#rap #hiphop #party</div>
+                </div>
+                <ul>
+                   <li><iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A<%= playlist.owner.uid %>%3Aplaylist%3A<%= playlist.spotify_id %>&theme=white" width="300" height="380" frameborder="0" allowtransparency="true"></iframe></li>
+                </ul>
+                <%= link_to "Follow", follow_path, class: "btn btn-default btn-rd" %>
+                <%= link_to "Details", festival_playlist_path(@fest, playlist), class: "btn btn-default btn-lgr-str" %>
+             </div>
+             <div class="dividewhite4"></div>
+          </div>
+        <% end %>
+
+      </div>
+
+   </div>
+</section>
+<!-- /Pricing Tables -->
