@@ -1,5 +1,109 @@
-<div class="header">
-  <h1>Create Custom Playlist</h1>
+<!-- Revolution Slider -->
+<div class="slider-revolution">
+   <div class="rev_slider_wrapper">
+      <div id="slider2" class="rev_slider head-overlay" data-version="5.0">
+         <ul>	<!-- SLIDE  -->
+            <li data-index="rs-266"
+                data-transition="zoomout"
+                data-slotamount="default"
+                data-easein="Power3.easeInOut"
+                data-easeout="Power3.easeInOut"
+                data-masterspeed="3000"
+                data-thumb="../../assets/images/vimeobg-100x50.jpg"
+                data-rotate="0"
+                data-saveperformance="off"
+                data-title="Intro"
+                data-description="">
+
+               <!-- MAIN IMAGE -->
+               <img src="<%= image_path "iphone-bg.png" %>"
+                    alt=""
+                    data-bgposition="center center"
+                    data-bgfit="cover"
+                    data-bgrepeat="no-repeat"
+                    data-bgparallax="10"
+                    class="rev-slidebg"
+                    data-no-retina>
+
+               <!-- LAYERS -->
+
+               <div class="tp-caption cap-title font-accident-one-normal tp-resizeme rs-parallaxlevel-1"
+                       data-x="center"
+                       data-y="center"
+                       data-basealign="grid"
+                       data-voffset="10"
+                       data-hoffset="0"
+                       data-width=”auto”
+                       data-height=”auto”
+                       data-whitespace=”[‘nowrap’,’normal’,’normal’,’normal’]”
+                       data-transform_idle="o:1;"
+                       data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;"
+                       data-transform_out="auto:auto;s:700;"
+                       data-start="1400"
+                       data-splitin=”none”
+                       data-splitout=”none”
+                       data-responsive_offset=”on”
+                       data-fontsize="['72','42','30','20']"
+                       data-lineheight="['120','100','90','80']"
+                       style="z-index: 2;">Customize Your Playlist
+                  </div>
+
+               <!-- LAYER NR. 5 -->
+               <div class="tp-caption Hero-Button rev-btn  rs-parallaxlevel-0"
+                    id="slide-266-layer-7"
+                    data-x="['center','center','center','center']"
+                    data-hoffset="['0','0','0','0']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-voffset="['180','180','170','165']"
+                    data-width="none"
+                    data-height="none"
+                    data-whitespace="nowrap"
+                    data-transform_idle="o:1;"
+                    data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
+                    data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
+
+                    data-transform_in="y:50px;opacity:0;s:1500;e:Power4.easeInOut;"
+                    data-transform_out="y:[175%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                    data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                    data-start="1250"
+                    data-splitin="none"
+                    data-splitout="none"
+                    data-actions='[{"event":"click","action":"scrollbelow","offset":"0px"}]'
+                    data-responsive_offset="on"
+                    data-responsive="off"
+
+                    style="z-index: 9; white-space: nowrap;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">GET STARTED
+               </div>
+            </li>
+         </ul>
+         <div class="tp-bannertimer"></div>
+      </div>
+
+   </div>
 </div>
-<br><br>
-<%= render "playlists/table" %>
+<!-- /Revolution Slider -->
+
+
+
+
+<!-- <button type="submit" class="btn btn-lg btn-lgr-str">Send message</button> -->
+
+
+
+  <!-- Feedback Block -->
+  <section id="feedback" class="feedback e-block e-block-skin pt-section" data-stellar-background-ratio="0.5" data-name="Feedback">
+    <div class="col-md-12 text-center">
+      <h2 class="font-accident-two-bold-italic">Whaaat do i do?</h2>
+      <h5 class="font-accident-one-bold uppercase hovercolor">Step 1: Come up with a title</h5>
+      <h5 class="font-accident-one-bold uppercase hovercolor">Step 2: Pick some artists</h5>
+      <h5 class="font-accident-one-bold uppercase hovercolor">Step 3: Submit and press play!</h5>
+    </div>
+    <div class="col-md-12 dividewhite4"></div>
+
+        <!-- FORM -->
+        <%= render "playlists/table" %>
+        <!-- FORM -->
+
+
+  </section>
+  <!-- /Feedback Block -->
