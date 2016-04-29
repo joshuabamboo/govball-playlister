@@ -111,19 +111,19 @@ fest.festival_days << sun
 fest.save
 
 
-fri_artists = ["Arcade Fire","Alabama Shakes","Major Lazer","FKA twigs","Silversun Pickups","ScHoolboy Q","Broken Social Scene","DJ Khaled","Mike D","Lindsey Stirling","Netsky","Preservation Hall Jazz Band","DJ Harvey","Madlib","De Lux Here We Go Magic","White Lung","Algiers","Little Scream","Justin Strauss"]
+fri_artists = ["Arcade Fire","Alabama Shakes","Major Lazer","FKA twigs","Silversun Pickups","Schoolboy Q","Broken Social Scene","DJ Khaled","Mike D","Lindsey Stirling","Netsky","Preservation Hall Jazz Band","DJ Harvey","Madlib","De Lux", "Here We Go Magic","White Lung","Algiers","Little Scream","Justin Strauss"]
 fri_artists.each do |a|
   fri.artists << Artist.create(name: a)
 end
 fri.save
 
-sat_artists = ["Kendrick Lamar","The National","Sufjan Stevens","Flosstradamus","Blood Orange","Foals","Daughter","Anderson Paak","AlunaGeorge","Jai Wolf","Kaytranada","TOKiMONSTA","The Julie Ruin","Oh Wonder","Melanie Martinez","Ex Hex","AURORA","Horse Meat Disco","Museum of Love","Caveman","JDH & Dave P"]
+sat_artists = ["Kendrick Lamar","The National","Sufjan Stevens","Flosstradamus","Blood Orange","Foals","Daughter","Anderson Paak","AlunaGeorge","Jai Wolf","Kaytranada","TOKiMONSTA","The Julie Ruin","Oh Wonder","Melanie Martinez","Ex Hex","AURORA","Horse Meat Disco","Museum of Love","Caveman"]
 sat_artists.each do |a|
   sat.artists << Artist.create(name: a)
 end
 sat.save
 
-sun_artists = ["LCD Soundsystem","Sia","A$AP Rocky","Kurt Vile & the Violators","Run The Jewels","Grace Potter","RÜFÜS DU SOL","Flatbush Zombies","The Front Bottoms","SZA","Nathaniel Rateliff & The Night Sweats","Holy Ghost!","Tourist Tensnake","Classixx","Cassy","Show Me The Body","Prinze George","The Black Madonna","Lloydski"]
+sun_artists = ["LCD Soundsystem","Sia","A$AP Rocky","Kurt Vile","Run The Jewels","Grace Potter","RÜFÜS DU SOL","Flatbush Zombies","The Front Bottoms","SZA","Nathaniel Rateliff & The Night Sweats","Holy Ghost!","Tourist","Tensnake","Classixx","Cassy","Show Me The Body","Prinze George","The Black Madonna","Lloydski"]
 sun_artists.each do |a|
   sun.artists << Artist.create(name: a)
 end

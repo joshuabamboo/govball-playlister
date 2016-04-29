@@ -13,3 +13,5 @@ generate playlist by just logging in !!!
 Why does the logout flash message stay on the page?
 
 favicon
+
+once i pull in follows, write a method to rank playlists to display on playlists#index
