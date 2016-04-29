@@ -9,3 +9,5 @@ maybe add a description to the playlists (looks better on index)
 search/filter by tags on index
 
 generate playlist by just logging in !!!
+
+Why does the logout flash message stay on the page?

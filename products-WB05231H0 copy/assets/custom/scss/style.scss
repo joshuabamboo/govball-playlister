@@ -1114,7 +1114,7 @@ li.mob-button {display: none;}
 // Slider
 
 .tp-loader.spinner0 {
-  background: url(../images/preloader.gif) no-repeat center center;
+  background: image-url("preloader.gif") no-repeat center center;
 }
 
 .slider-revolution {
@@ -2610,7 +2610,3 @@ footer {
 
 // Media Querys
 @import "mediaquery.scss";
-
-
-
-

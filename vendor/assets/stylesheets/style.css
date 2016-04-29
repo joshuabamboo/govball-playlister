@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Dosis:300,400,500,700);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 .e-bg-light-texture {
-  background: url("../images/backgrounds/skin_side_up.png"); }
+  background: image-url("skin_side_up.png"); }
 
 .e-bg-texture-02 {
   background: url("../images/rs-images/02.jpg");
@@ -706,7 +706,7 @@ ul.list-o {
   min-height: 600px; }
 
 #back-top a {
-  background: rgba(167, 167, 167, 0.4) url(../images/back_top.png) no-repeat 50% 50%;
+  background: rgba(167, 167, 167, 0.4) image-url("back_top.png") no-repeat 50% 50%;
   bottom: 60px;
   display: block;
   height: 40px;
@@ -721,7 +721,7 @@ ul.list-o {
   -o-transition: all 0.35s ease-in-out;
   -ms-transition: all 0.35s ease-in-out; }
   #back-top a:hover {
-    background: #e74c3c url(../images/back_top.png) no-repeat 50% 50%; }
+    background: #e74c3c image-url("back_top.png") no-repeat 50% 50%; }
 
 /* Forms */
 input, textarea {
@@ -1635,7 +1635,7 @@ li.mob-button {
 [Slider Revolution]
 */
 .tp-loader.spinner0 {
-  background: url(../images/preloader.gif) no-repeat center center; }
+  background: image-url("preloader.gif") no-repeat center center; }
 
 .slider-revolution i::before {
   color: #fff;
