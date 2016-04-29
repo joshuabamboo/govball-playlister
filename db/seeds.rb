@@ -117,7 +117,7 @@ fri_artists.each do |a|
 end
 fri.save
 
-sat_artists = ["Kendrick Lamar","The National","Sufjan Stevens","Flosstradamus","Blood Orange","Foals","Daughter","Anderson .Paak & The Free Nationals","AlunaGeorge","Jai Wolf","Kaytranada","TOKiMONSTA","The Julie Ruin","Oh Wonder","Melanie Martinez","Ex Hex","AURORA","Horse Meat Disco","Museum of Love","Caveman","JDH & Dave P"]
+sat_artists = ["Kendrick Lamar","The National","Sufjan Stevens","Flosstradamus","Blood Orange","Foals","Daughter","Anderson Paak","AlunaGeorge","Jai Wolf","Kaytranada","TOKiMONSTA","The Julie Ruin","Oh Wonder","Melanie Martinez","Ex Hex","AURORA","Horse Meat Disco","Museum of Love","Caveman","JDH & Dave P"]
 sat_artists.each do |a|
   sat.artists << Artist.create(name: a)
 end
