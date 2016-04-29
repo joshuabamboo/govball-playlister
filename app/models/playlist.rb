@@ -81,7 +81,6 @@ class Playlist < ActiveRecord::Base
 
   def get_top_tracks(spotify_artists, count: 1)
     tracks = []
-    binding.pry
     spotify_artists.collect do |artist|
       tracks << artist.top_tracks(:US).sample(count)
     end
