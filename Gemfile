@@ -31,6 +31,12 @@ gem 'bootstrap-sass'
 # All the pretty fonts
 gem 'font-awesome-rails'
 
+group :production do
+  # Dear god... heroku
+  gem 'rails_12factor'
+end
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
