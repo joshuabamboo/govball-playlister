@@ -1,18 +1,18 @@
 <!-- Services Block -->
 <section id="services" class="e-block e-block-centered e-block-skin features-block pt-section" data-name="Services" style="padding-bottom: 0px;">
    <div class="container">
-      <div class="row">
-         <div class="col-sm-6 wow fadeInDown" data-wow-delay="0.2s" data-wow-offset="10">
-            <h2 class="font-accident-two-bold-italic">Step 2:</h2>
-            <h5 class="font-accident-one-bold title uppercase hovercolor">Browse or Create a Playlist</h5>
-            <div class="dividewhite4"></div>
-            <div class="">
-              <a role="button" href="<%= festival_playlists_path(@fest) %>" class="btn btn-lg btn-grey-str btn-logos wow fadeInDown" data-wow-delay="0.6s" data-wow-offset="10">Browse Playlists</a>
-              <a role="button" href="<%= new_festival_playlist_path(@fest) %>" class="btn btn-lg btn-darker btn-logos wow fadeInDown" data-wow-delay="0.6s" data-wow-offset="10">Create Your Own</a>
-            </div>
-            <div class="dividewhite4"></div>
-         </div>
-         <div class="col-sm-6 wow fadeInDown" data-wow-delay="0.4s" data-wow-offset="10"><%= image_tag("#{@fest.name.downcase.split.join("-")}.png", class: "img-responsive") %></div>
+      <div class="row col-md-12 col-md-offset-1">
+        <div class="col-sm-6 col-md-4 wow fadeInDown" data-wow-delay="0.4s" data-wow-offset="10"><%= image_tag("#{@fest.name.downcase.split.join("-")}.png", class: "img-responsive", style: "max-height:300px") %></div>
+        <div class="col-sm-6 wow fadeInDown" data-wow-delay="0.2s" data-wow-offset="10">
+          <h2 class="font-accident-two-bold-italic"></h2>
+          <h5 class="font-accident-one-bold title uppercase hovercolor">Browse or Create a Playlist</h5>
+          <div class="dividewhite4"></div>
+          <div class="">
+            <a role="button" href="<%= festival_playlists_path(@fest) %>" class="btn btn-lg btn-grey-str btn-logos wow fadeInDown" data-wow-delay="0.6s" data-wow-offset="10">Browse Playlists</a>
+            <a role="button" href="<%= new_festival_playlist_path(@fest) %>" class="btn btn-lg btn-darker btn-logos wow fadeInDown" data-wow-delay="0.6s" data-wow-offset="10">Create Your Own</a>
+          </div>
+          <div class="dividewhite4"></div>
+        </div>
 
       </div>
    </div>
